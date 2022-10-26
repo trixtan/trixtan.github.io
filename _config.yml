@@ -28,6 +28,7 @@ url: "https://btb.n-ri.co" # the base hostname & protocol for your site, e.g. ht
 twitter_username: 
 github_username: trixtan
 google_analytics: G-CQ62TCRYJ8
+permalink: pretty
 
 # Build settings
 theme: minima
