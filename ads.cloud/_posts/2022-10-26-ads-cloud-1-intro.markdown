@@ -2,7 +2,6 @@
 layout: post
 title:  "AURIX Development Studio - The beginning"
 date:   2022-10-26 09:58:54 +0100
-categories: ads.cloud
 ---
 I decided to “port” [AURIX Development Studio][ads] (ADS) to [CDT.cloud][cdt-cloud] to explore the feasibility, understand the challenges and possibly give a contribution to the project.
 
