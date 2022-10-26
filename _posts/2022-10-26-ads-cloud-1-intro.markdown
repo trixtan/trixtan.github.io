@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AURIX Development Studio - The beginning”
+title:  "AURIX Development Studio - The beginning"
 date:   2022-10-26 09:58:54 +0100
 categories: ads.cloud
 ---
