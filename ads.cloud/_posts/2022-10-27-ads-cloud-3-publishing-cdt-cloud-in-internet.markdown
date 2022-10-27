@@ -3,7 +3,7 @@ layout: post
 title:  "Exposing CDT.cloud with Nginx"
 date:   2022-10-27 09:58:54 +0100
 ---
-To expose CDT.cloud and make it accessible from any browser, I opted fornthe following stack:
+To expose CDT.cloud and make it accessible from any browser, I opted for the following stack:
 - NGINX as web server, configured for reverse proxying requests to CDT.cloud
 - LetsEncrypt to get free SSL certificates
  
@@ -39,7 +39,7 @@ networks:
 ```
 Noteworthy aspects of this configuration:
 - `environment`
-	- `VIRTUAL_HOST=.ads.n-ri.co`: with this I am asking nginx-proxy to create a reverse proxy configuration to serve the domain __*.ads.n-ri.co__ with the cdt blueprint application. Note the dot at the beginning of the pattern. That is necessary to serve any url in the form __aaa.bbb.ads.n-ri.co__, as explained in the NGINX `[server_name](https://nginx.org/en/docs/http/server_names.html)` documentation.
+	- `VIRTUAL_HOST=.ads.n-ri.co`: with this I am asking nginx-proxy to create a reverse proxy configuration to serve the domain __*.ads.n-ri.co__ with the cdt blueprint application. Note the dot at the beginning of the pattern. That is necessary to serve any url in the form __aaa.bbb.ads.n-ri.co__, as explained in the NGINX [`server_name`](https://nginx.org/en/docs/http/server_names.html) documentation.
 
 ## DNS Configuration
 The last thing to do is to enable Internet to correctly route all requests to the right IP address.
@@ -48,6 +48,6 @@ I added the following two rows to my dns configuration.
 ads                IN A 88.198.161.42
 *.ads              IN CNAME ads
 ```
-Note the use of a wildcard host name, necessary to route requests in the form `__aaa.bbb__.ads.`.
+Note the use of a wildcard host name, necessary to route requests in the form `aaa.bbb.ads.`.
 
 [ngpc]: https://github.com/jwilder/docker-letsencrypt-nginx-proxy-companion
