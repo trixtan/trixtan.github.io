@@ -46,7 +46,6 @@ In fact, a call to `dmesg` shows:
 1. Load and retag the image on the server
 	```sh
 	docker load -i cdt-cloud-blueprint.tgz
-	docker image tag cdt-cloud-blueprint cdt-cloud-blueprint:latest
 	```
 
 [cdt-cloud]: https://github.com/eclipse-cdt-cloud/cdt-cloud
