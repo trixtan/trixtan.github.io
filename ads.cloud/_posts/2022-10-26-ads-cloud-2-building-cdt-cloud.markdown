@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Building and deploying CDT.cloud"
+title:  "Building containerized CDT.cloud"
 date:   2022-10-26 09:58:54 +0100
 ---
 The first step I decided to do is to install the already existing [CDT.cloud][cdt-cloud] in my remote virtual server (a VPS I have by the provider Hetzner).
@@ -12,6 +12,7 @@ The CDT.cloud documentation suggests the command to create the docker image:
 ```sh
 docker build -t cdt-cloud-blueprint:latest -f dockerfile/Dockerfile .
 ```
+
 ### webpack and SIGKILL
 I faced the following issue building the Docker image:
 
@@ -36,14 +37,15 @@ In fact, a call to `dmesg` shows:
 [ 1077.609009] Out of memory: Kill process 9229 (webpack) score 303 or sacrifice child
 [ 1077.610169] Killed process 9229 (webpack) total-vm:33465112kB, anon-rss:1166192kB, file-rss:0kB, shmem-rss:0kB
 ```
-**Solution**
+
+#### Solution
 1. Build the Docker image on a stronger machine (I used my laptop)
-1. Export the image:
+2. Export the image:
 	```sh
 	docker save cdt-cloud-blueprint | gzip > cdt-cloud-blueprint.tgz
 	```
-1. Upload the tgzipped image to the remote server
-1. Load and retag the image on the server
+3. Upload the tgzipped image to the remote server
+4. Load and retag the image on the server
 	```sh
 	docker load -i cdt-cloud-blueprint.tgz
 	```
