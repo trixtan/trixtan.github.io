@@ -17,12 +17,12 @@ To build [libdwarf][libdwarf] for usage with Windows, I performed the following 
         mkdir /tmp/build
         cd /tmp
         wget https://github.com/davea42/libdwarf-code/releases/download/v0.5.0/libdwarf-0.5.0.tar.xz
-	tar -xvf libdwarf-0.5.0.tar.xz
-	cd  /tmp/build
+        tar -xvf libdwarf-0.5.0.tar.xz
+        cd  /tmp/build
 
 - Build
 
-        meson /tmp/libdwarf-0.5.0.tar.xz
+        meson /tmp/libdwarf-0.5.0
         ninja
 
 
